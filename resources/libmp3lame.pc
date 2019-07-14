@@ -1,0 +1,12 @@
+prefix=/home/specto/projects/third-party-installed
+exec_prefix=/home/specto/projects/third-party-installed
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libmp3lame
+Description: High quality MPEG Audio Layer III (MP3) encoder
+Version: 3.98.4
+Requires: 
+Libs: -L${libdir} -lmp3lame 
+Libs.private: -lstdc++ -lm
+Cflags: -I${includedir}

@@ -1,0 +1,11 @@
+#ifndef __MP3C_CONFIG_H__
+#define __MP3C_CONFIG_H__
+
+#define MP2MP3_USE_BLADE_ENC_DLL @modplugtomp3_USE_BLADE_ENC_DLL@
+
+#cmakedefine HAVE_INTTYPES_H
+#cmakedefine HAVE_STDINT_H
+#cmakedefine HAVE_MALLOC_H
+
+#endif
+
