@@ -10,7 +10,7 @@ Requirements
 - Lame MP3 Encoder installed (3.98.4)
 - CMake 2.8.x installed
 
-Building
+# Building
 - Copy <source dir>/libmp3lame.pc to your system pkg-config directory (in the same tree as Lame MP3 is installed)
 - Unpack the source to a directory
 - Create a directory for the build output
@@ -18,9 +18,9 @@ cd <build directory>
 cmake <path-to-source-directory>
 make
 
-The executable is src/modplug2mp3
+The generated executable is src/modplug2mp3
 
-Future work
+# Future work
 - Improve build system so binary goes to a more sensible location
 - Re-instate windows support
 - Upgrade package versions to latest
