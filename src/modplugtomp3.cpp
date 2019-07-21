@@ -256,7 +256,7 @@ void ConvertSpecifiedFiles ()
     if (initialised)
     {
         CListener listener;
-        std::auto_ptr<CModuleCvt> moduleConvert;
+        std::unique_ptr<CModuleCvt> moduleConvert;
         moduleConvert.reset(new CModuleCvt(listener));
 
         int index = 1;
@@ -321,7 +321,7 @@ int main(int argc, char* argv[])
             ConvertSpecifiedFiles();
         }
     }
-    catch (CCommandLineParseException e)
+    catch (CCommandLineParseException & e)
     {
         // nothing to do
         PrintHeaders();

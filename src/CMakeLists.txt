@@ -6,6 +6,9 @@ include(CheckIncludeFiles)
 # Include the directly itself as a path for includes
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+# Output to a directory named bin
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 #
 # Define sources
 file(GLOB modplugtomp3_SOURCES *.cpp)
@@ -96,9 +99,12 @@ target_link_libraries(modplug2mp3 ${TAGLIB_LIBRARIES})
 target_link_libraries(modplug2mp3 ${LIBMP3LAME_LIBRARIES})
 
 #
-# Enable C++11. If using CMake 3 there are proper vars for this
+# Enable C++11, make warnings errors.
 #
-set(CMAKE_CXX_FLAGS                "-Wall -Werror -std=c++11")
+target_compile_options(modplug2mp3 PRIVATE -Wall -Werror -std=c++11)
+
+# taglib depends on the zlib library
+target_link_options(modplug2mp3 PRIVATE -lz)
 
 MACRO_ENSURE_OUT_OF_SOURCE_BUILD()
 

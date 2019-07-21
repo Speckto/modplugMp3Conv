@@ -1,10 +1,10 @@
 
-#include <SoundFileWrap.h>
+#include "SoundFileWrap.h"
 
 // libModplug stuff
-#include <stdafx.h>
-#include <modplug.h>
-#include <sndfile.h>
+#include <libmodplug/stdafx.h>
+#include <libmodplug/modplug.h>
+#include <libmodplug/sndfile.h>
 
 // Other
 //#ifndef __WIN32__
@@ -28,8 +28,8 @@ class CSoundFileWrapData
 public:
     CSoundFileWrapData() : modFileDataSize(0) { };
 public: // data
-    std::auto_ptr<CSoundFile> modFile;
-    std::auto_ptr<char> modFileData;
+    std::unique_ptr<CSoundFile> modFile;
+    std::unique_ptr<char> modFileData;
     uint32_t modFileDataSize;
 };
 

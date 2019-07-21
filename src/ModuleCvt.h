@@ -143,7 +143,7 @@ private: // data
     static bool modPlugInitialised;
     static CMP3Encoder * mp3Encoder;
     CConversionListener & listener;
-    auto_ptr<CSoundFileWrapper> modFile;     // Currently loaded mod file
+    unique_ptr<CSoundFileWrapper> modFile;     // Currently loaded mod file
 };
 
 class CModuleCvt_Exception {
